@@ -181,6 +181,19 @@ function collapseAll () {
 	}
 }
 
+jQuery(document).on('click', '.hetero-list-container .repeated-chunk .dd-handle', function () {
+	console.log(jQuery(this).closest('.repeated-chunk'));
+});
+
+/**
+ * 
+ */
+function collapse (element) {
+	var rows = element.querySelectorAll('tr');
+	var collapser = getCollapser(element);
+	collapser(rows, element);
+}
+
 /**
 	Get collapsing function for the container.
 	
