@@ -184,14 +184,15 @@ function collapseAll () {
 jQuery(document).on('click', '.hetero-list-container .repeated-chunk .dd-handle', function () {
 	var element = jQuery(this).closest('.repeated-chunk');
 
-	var isHidden = element.hasClass('hidden');
+	var isHidden = element.hasClass('collapse');
 
 	if (isHidden) {
-		element.removeClass('hidden')
+		element.removeClass('collapse')
 		element.find('tr:not(:first-child)').css('display', '');
+		element.find('.collapsed-info').remove();
 	} else {
 		collapse(element[0])
-		element.addClass('hidden');
+		element.addClass('collapse');
 	}
 });
 
