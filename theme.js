@@ -182,7 +182,17 @@ function collapseAll () {
 }
 
 jQuery(document).on('click', '.hetero-list-container .repeated-chunk .dd-handle', function () {
-	collapse(jQuery(this).closest('.repeated-chunk')[0]);
+	var element = jQuery(this).closest('.repeated-chunk');
+
+	var isHidden = element.hasClass('hidden');
+
+	if (isHidden) {
+		element.removeClass('hidden')
+		element.find('tr:not(:first-child)').css('display', '');
+	} else {
+		collapse(element[0])
+		element.addClass('hidden');
+	}
 });
 
 /**
