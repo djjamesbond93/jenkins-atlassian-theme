@@ -182,7 +182,7 @@ function collapseAll () {
 }
 
 jQuery(document).on('click', '.hetero-list-container .repeated-chunk .dd-handle', function () {
-	console.log(jQuery(this).closest('.repeated-chunk'));
+	collapse(jQuery(this).closest('.repeated-chunk')[0]);
 });
 
 /**
